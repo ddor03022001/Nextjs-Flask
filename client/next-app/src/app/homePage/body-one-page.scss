@@ -1,0 +1,56 @@
+.container-body-one-page {
+    padding: 10px;
+    margin-top: 50px;
+
+    .search-body-one-page {
+        width: 100%;
+        text-align: center;
+
+        .search-input {
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    }
+
+    .product-list {
+        padding: 20px 100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        /* Định nghĩa số cột tự động */
+        gap: 50px;
+        /* Khoảng cách giữa các sản phẩm */
+
+        .product-item {
+            display: inline-grid;
+            padding: 10px;
+            height: 230px;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            .text {
+                padding: 5px;
+                height: 50px;
+                text-align: center;
+            }
+
+            .image {
+                padding: 10px;
+                height: 160px;
+                width: 100%;
+                position: relative;
+            }
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
