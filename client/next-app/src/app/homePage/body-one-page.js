@@ -9,8 +9,8 @@ export default function BodyOnePage() {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [searchQuery, setSearchQuery] = useState('');
-    const [selectedProduct, setSelectedProduct] = useState(null); // Quản lý sản phẩm đang được chọn
-    const [hideOutOfStock, setHideOutOfStock] = useState(false); // Quản lý trạng thái checkbox
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [hideOutOfStock, setHideOutOfStock] = useState(false);
     const productsPerPage = 12;
 
     useEffect(() => {
@@ -39,19 +39,18 @@ export default function BodyOnePage() {
     };
 
     const handleCheckboxChange = () => {
-        setHideOutOfStock(!hideOutOfStock); // Đổi trạng thái checkbox
-        setCurrentPage(1); // Reset trang hiện tại về 1
+        setHideOutOfStock(!hideOutOfStock);
+        setCurrentPage(1);
     };
 
     const handleProductClick = (product) => {
-        setSelectedProduct(product); // Hiển thị popup với sản phẩm được chọn
+        setSelectedProduct(product);
     };
 
     const handleClosePopup = () => {
-        setSelectedProduct(null); // Đóng popup
+        setSelectedProduct(null);
     };
 
-    // Lọc sản phẩm dựa trên từ khóa tìm kiếm và trạng thái checkbox
     const filteredProducts = products.filter((product) =>
         product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
         (!hideOutOfStock || product.qty_available >= 1)
